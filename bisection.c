@@ -18,17 +18,17 @@ int main()
     // maximum iterations
     int N = 100;
 
-    printf("n\tp\n");
+    printf("n\tp\tf(p)\n");
     double p;
     int n = 1;
     while (n <= N)
     {
         p = (a + b) / 2;
-        printf("%d\t%lf\n", n, p);
+        printf("%d\t%lf\t%lf\n", n, p, f(p));
 
         // stopping criterion
         // alternatives exist, e.g. |f(p)| <= TOL
-        if ((b - a) / 2 <= TOL)
+        if ((b - a) / 2 < TOL)
             break;
 
         if (f(a) * f(p) > 0)
